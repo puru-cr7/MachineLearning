@@ -12,5 +12,5 @@ import fix_yahoo_finance as yf
 def downloadStockData(syms, start_date, end_date, direc):
     for sym in syms:
         data = yf.download(sym, start_date, end_date)
-        data.to_csv(direc + sym + ".csv")
+        data.to_csv(direc + "/" + sym + ".csv")
 
