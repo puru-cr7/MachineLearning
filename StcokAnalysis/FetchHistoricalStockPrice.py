@@ -7,7 +7,7 @@ Created on Jun 19, 2018
 import fix_yahoo_finance as yf
 
 
-# This method downloads a list of stoock historical prices 
+# This method downloads a list of stock historical prices 
 # and stores as csv files is mentioned directory
 def downloadStockData(syms, start_date, end_date, direc):
     for sym in syms:
