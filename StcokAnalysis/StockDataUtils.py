@@ -3,14 +3,9 @@ Created on Jun 21, 2018
 
 @author: Purnendu Rath (puru_cr7)
 '''
-import os
+from GenericUtils import symbol_to_path
 import fix_yahoo_finance as yf 
-import pandas as pd 
-
-
-def symbol_to_path(sym, base_dir):
-    # Return CSV file path given ticker symbol
-    return os.path.join(base_dir, "{}.csv".format(str(sym)))
+import pandas as pd
 
 
 def download_stock_data(syms, start_date, end_date, base_dir):
