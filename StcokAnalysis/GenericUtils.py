@@ -14,4 +14,9 @@ def drop_rows_with_na(df):
 def symbol_to_path(sym, base_dir):
     # Return CSV file path given ticker symbol
     return os.path.join(base_dir, "{}.csv".format(str(sym)))
-    
+
+
+def drop_all_warning():
+    # Drops all warnings from console at runtime.
+    import warnings
+    warnings.simplefilter("ignore")
