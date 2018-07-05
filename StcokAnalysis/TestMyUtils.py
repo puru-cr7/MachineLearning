@@ -22,11 +22,11 @@ def to_test_minimize(port_allocs, start_val, port_price):
     return v1 * -1;
 
 
-def test_my_util():
+def test_my_utils():
     # fetching data
     pu.configure_plotly('puru_cr7', '#######')
     dates = pd.date_range('2016-03-14', '2018-03-13')
-    symbols = ['ITC.NS', 'PNB.NS', 'TATAMOTORS.NS', 'NSE']  # SPY will be added in get_data()
+    symbols = ['ITC.NS', 'PNB.NS', 'TATAMOTORS.NS', 'NSE'] 
     df = sdu.get_adjcls_data(symbols, dates, "data/trading")
     # pu.plot_data_plotly(sdu.normalize_data(df))
     
@@ -78,5 +78,5 @@ def test_my_util():
 
 
 if __name__ == "__main__":
-    test_my_util()
+    test_my_utils()
     
