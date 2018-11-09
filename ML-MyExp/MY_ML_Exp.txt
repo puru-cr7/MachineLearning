@@ -15,6 +15,16 @@
 
 7.We need to learn the parameters in the hypothesis h. One way is gradient descent, thetaj=thetaj-alpha*(dC/dthetaj), alpha is the learning rate, determines the step size. The problem: when alpha is too small, time to converge may be high. If alpha is too high, u may fail to converge, rather may diverge. We can repeat until thetaj value does not change significantly, then we have reached a local minima.
 
-8. Problem with fradient descent is that we may not reach global minima, if there are lcoal minima available.
+8. Problem with gradient descent is that we may not reach global minima, if there are lcoal minima available.
 
-9.
+9.Multi-Variable linear regression, that is when there are more than one inputs, then h=t0+t1*x1+t2*x2...+tn*xn=T'X, gradient descent is peformed similarly using simulataneous update of Thetaz.
+
+10. Usually before applying any ML algorithm like Gradient descent, we must prerprocess the incoming data. Come of the preprocessing techniques are feature scaling nd mean normalisation.
+
+11. Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input variable, resulting in a new range of just 1. 
+
+12. Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new average value for the input variable of just zero.
+
+13. 11 and 12 can be achieved as x= x-mu / r, where x is any feature, mu is the average value for that feature, and r is range for that feature.
+
+14.
