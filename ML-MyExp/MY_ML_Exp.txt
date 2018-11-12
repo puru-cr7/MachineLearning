@@ -1,7 +1,9 @@
+
 1. Making computers learn without explicitly programming them.
 
 2. Two types, Supervised, Unsupervised
-	Supervised- we are given a data set and already know what our correct output should look like, having the idea that there is a           relationship between the input and the output.
+	Supervised- we are given a data set and already know what our correct output should look like, having the idea that there is a  
+	relationship between the input and the output.
         Unsupervised-we approach problems with little or no idea what our results should look like. We can derive structure from data 
 	where we don't necessarily know the effect of the variables.
 
@@ -23,10 +25,10 @@
 8. Problem with gradient descent is that we may not reach global minima if there are local minima available.
 
 9. Multi-Variable linear regression, that is when there are more than one inputs, then h=t0+t1*x1+t2*x2...+tn*xn=T'X, gradient descent 
-   is peformed similarly using simulataneous update of Thetaz.
+   is performed similarly using a simultaneous update of Thetaz.
 
-10. Usually before applying any ML algorithm like Gradient descent, we must pre-process the incoming data. Some of the preprocessing 
-    techniques are feature scaling and mean normalisation.
+10. Usually, before applying any ML algorithm like Gradient descent, we must pre-process the incoming data. Some of the preprocessing 
+    techniques are feature scaling and mean normalization.
 
 11. Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input   
     variable, resulting in a new range of just 1. 
@@ -34,19 +36,19 @@
 12. Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in 
     a new average value for the input variable of just zero.
 
-13. 11 and 12 can be achieved as x= x-mu / r, where x is any feature, mu is the average value for that feature, and r is range for that 
-    feature.
+13. 11 and 12 can be achieved as x= x-mu / r, where x is any feature, mu is the average value for that feature, and r is the range for  
+    that feature.
 
-14. If we choose a hypothesis h, which is non-linear, then we must make sure that feature scaling anad mean normalisation are carried  
+14. If we choose a hypothesis h, which is non-linear, then we must make sure that feature scaling and mean normalization are carried  
     out before training.
 
 15. We can directly solve for T values using normal equation T= (X'*X)^(-1) * X' * y, this doe snot need any feature scaling.
 
-16. Normal equation has complexity O(n^3) whereas Gradient descent has complexity O(k*n^2), so if features n are large GD will perform 
-    better.Also normal equation can fail if (X' * X) is non-invertible, in that case we need to find out linearly dependent features and 
-    remove them.
+16. The normal equation has complexity O(n^3) whereas Gradient descent has complexity O(k*n^2), so if features n are large GD will    
+    perform better. Also, the normal equation can fail if (X' * X) is non-invertible, in that case, we need to find out linearly   
+    dependent features and remove them.
 
-17. Logistic regression is same as Linear regression as mentioned above, the only difference is that, now h(x)=g(T'x), where 
+17. Logistic regression is the same as Linear regression as mentioned above, the only difference is that now h(x)=g(T'x), where 
     g(z)=1/(1+(e^-z)).now h(x) will give the probability that y=1, that is if h(x0)=0.7, it means that the probaility that y=1 is 0.7.
 
 
@@ -54,16 +56,17 @@
 
 19. Cost function for logistic regression, J=1/m * sum(c), where C=-y*log(h) -(1-y) *log(1-h) 
 
-20. Logistic regression uses gradient descent as in case of Linear regression, with simulataneous update iof Theta(T) values in each    
-    iteration.
+20. Logistic regression uses gradient descent as in case of Linear regression, with the simultaneous update of Theta(T) values in each       iteration.
 
 21. For multi-class classification, Train a logistic regression classifier h(x) for each class to predict the probability that y = i.
     To make a prediction on a new x, pick the class that maximizes h(x). This is called one vs rest classifier. You will have as many h     functions as the number of classes in the output.
 
-22. Underfitting, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused     by a function that is too simple or uses too few features.
+22. Underfitting, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused 
+    by a function that is too simple or uses too few features.
 
 23. Overfitting, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to    
-    predict new data.It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the     data.
+    predict new data.It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the 
+    data.
 
 24. Solution to under-fitting- a) use more features b)use higher order hypothesis
 
@@ -76,14 +79,15 @@
 27. Regularised normal equation, T= (X'*X + L.K)^(-1) * X' * y, L=Lambda, K=K is a matrix with 0 at the top left and 1's down the    
     diagonal, with0's everywhere else. It should have dimension (n+1)×(n+1). 
 
-28.  In refernce to ANN Feed forward (refer diag), If network has Sj units in layer j and Sj+1 units in layer j+1, then Θ for Jth layer      will be of dimension Sj+1 × (Sj+1). Θ is always a 2D matrix.
+28.  In reference to ANN Feedforward (refer diag), If the network has Sj units in layer j and Sj+1 units in layer j+1, then Θ for Jth   
+     layer will be of dimension Sj+1 × (Sj+1). Θ is always a 2D matrix.
 
 29. For AND Θ= [−30 20 20], NOR Θ= [10 -20 -20], OR Θ= [−10 20 20], we can follow same steps for multi-class classification.
 
-30. Back proagation is used to get Θ values.
+30. Back-propagation is used to get Θ values.
 
 31. The training error will tend to decrease as we increase the degree d of the polynomial.
-    At the same time, the cross validation error will tend to decrease as we increase d up to a point, 
+    At the same time, the cross-validation error will tend to decrease as we increase d, up to a point, 
     and then it will increase as d is increased, forming a convex curve.
     Refer poly-degree diagram
 
@@ -100,5 +104,5 @@
     
 34. A neural network with fewer parameters is prone to underfitting. It is also computationally cheaper.
     A large neural network with more parameters is prone to overfitting. It is also computationally expensive. 
-    In this case you can use regularization (increase λ) to address the overfitting.
+    In this case, you can use regularization (increase λ) to address the overfitting.
 
