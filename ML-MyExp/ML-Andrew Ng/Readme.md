@@ -1,2 +1,2 @@
 
-# Lecture Slides From ML course on Courseera by Andrew Ng
+# ML course on Courseera by Andrew Ng
