@@ -109,6 +109,8 @@
 35. Precision= true pos/ true pos + false pos = true pos/predicted pos
     Recall= true pos/ true pos+false neg = true pos/ actual pos
     F Score= 2PR/(P+R)
+    Predict only if very confi, high precision, low recall.
+    Do not want to miss manypos cases, high recall, low precision.
 
 
 
