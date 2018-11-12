@@ -105,4 +105,10 @@
 34. A neural network with fewer parameters is prone to underfitting. It is also computationally cheaper.
     A large neural network with more parameters is prone to overfitting. It is also computationally expensive. 
     In this case, you can use regularization (increase λ) to address the overfitting.
+    
+35. Precision= true pos/ true pos + false pos = true pos/predicted pos
+    Recall= true pos/ true pos+false neg = true pos/ actual pos
+    F Score= 2PR/(P+R)
+
+
 
