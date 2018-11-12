@@ -7,33 +7,77 @@
 
 3. Supervised- Regression, Classification
 
-4. In Supervised learning, the aim is to find a function h, called hypothesis that maps the inputs to the outputs in such a way that it is highly likely that a new input(outside of training set), 
+4. In Supervised learning, the aim is to find a function h, called hypothesis that maps the inputs to the outputs in such a way that it is highly
+   likely that a new input(outside of training set), 
    will result in correct output when passed through h
 
-5. Cost func, C=1/2 mse. mse=mean sqrd error, we must choose an h that minimises this C, mse= [(h(x)-y)^2]/m. 
+5. Cost func, J=1/2 mse. mse=mean sqrd error, we must choose an h that minimises this J, mse= [(h(x)-y)^2]/m. 
 
-6. Alternatively, if we plot contour plot b/w say theta1 and theta0(say h=theta0 +theta1*x), then the center of the contour plot will give the minimal cost add hence the correct values of theta0 and theta1 that minimizes C
+6. Alternatively, if we plot contour plot b/w say theta1 and theta0(say h=theta0 +theta1*x), then the center of the contour plot will give the 
+   minimal cost add hence the correct values of theta0 and theta1 that minimizes J
 
-7. We need to learn the parameters in the hypothesis h. One way is gradient descent, thetaj=thetaj-alpha*(dC/dthetaj), alpha is the learning rate, determines the step size. 
+7. We need to learn the parameters in the hypothesis h. One way is gradient descent, thetaj=thetaj-alpha*(dJ/dthetaj), alpha is the learning 
+   rate, determines the step size. 
    The problem: when alpha is too small, time to converge may be high. If alpha is too high, u may fail to converge, rather may diverge. 
    We can repeat until thetaj value does not change significantly, then we have reached a local minimum.
 
 8. Problem with gradient descent is that we may not reach global minima if there are local minima available.
 
-9. Multi-Variable linear regression, that is when there are more than one inputs, then h=t0+t1*x1+t2*x2...+tn*xn=T'X, gradient descent is peformed similarly using simulataneous update of Thetaz.
+9. Multi-Variable linear regression, that is when there are more than one inputs, then h=t0+t1*x1+t2*x2...+tn*xn=T'X, gradient descent is 
+   peformed similarly using simulataneous update of Thetaz.
 
-10. Usually before applying any ML algorithm like Gradient descent, we must pre-process the incoming data. Some of the preprocessing techniques are feature scaling and mean normalisation.
+10. Usually before applying any ML algorithm like Gradient descent, we must pre-process the incoming data. Some of the preprocessing techniques 
+    are feature scaling and mean normalisation.
 
-11. Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input variable, resulting in a new range of just 1. 
+11. Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input variable, 
+    resulting in a new range of just 1. 
 
-12. Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new average value for the input variable of just zero.
+12. Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new 
+    average value for the input variable of just zero.
 
 13. 11 and 12 can be achieved as x= x-mu / r, where x is any feature, mu is the average value for that feature, and r is range for that feature.
 
-14. If we choose a hypothesis h, which is non-linear, then we must make sure that feature scaling anad mean normalisation are carried out before training.
+14. If we choose a hypothesis h, which is non-linear, then we must make sure that feature scaling anad mean normalisation are carried out before 
+    training.
 
 15. We can directly solve for T values using normal equation T= (X'*X)^(-1) * X' * y, this doe snot need any feature scaling.
 
 16. Normal equation has complexity O(n^3) whereas Gradient descent has complexity O(k*n^2), so if features n are large GD will perform better.
     Also normal equation can fail if (X' * X) is non-invertible, in that case we need to find out linearly dependent features and remove them.
-    
+
+17. Logistic regression is same as Linear regression as mentioned above, the only difference is that, now h(x)=g(T'x), where g(z)=1/(1+(e^-z)).
+	now h(x) will give the probability that y=1, that is if h(x0)=0.7, it means that the probaility that y=1 is 0.7.
+
+
+18. So from 17, if T'x > 0, h=g(T'x)>0.5, implies y=1. this is for bianry classification.
+
+19. Cost function for logistic regression, J=1/m * sum(c), where C=-y*log(h) -(1-y) *log(1-h) 
+
+20. Logistic regression uses gradient descent as in case of Linear regression, with simulataneous update iof Theta(T) values in each iteration.
+
+21. For multi-class classification, Train a logistic regression classifier h(x) for each class to predict the probability that y = i.
+	To make a prediction on a new x, pick the class that maximizes h(x). This is called one vs rest classifier. You will have as many h fumnctions as the number of classes in the output.
+
+22. Underfitting, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a 
+    function that is too simple or uses too few features.
+
+23. Overfitting, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new 
+    data.It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.
+
+24. Solution to under-fitting- a) use more features b)use higher order hypothesis
+
+25. Solution to over-fitting- a) reduce the number of features either manually and/or by using model selection algo
+							  b) Regularization -keep all features but reduce the magnitude of thetaz
+
+
+26. Regularised Cost func, J=1/2m*[mse + L*sum(Tj^2)], T=theta, L=Lambda=regularisation params.
+
+27. Regularised normal equation, T= (X'*X + L.K)^(-1) * X' * y, L=Lambda, K=K is a matrix with 0 at the top left and 1's down the diagonal, with
+    0's everywhere else. It should have dimension (n+1)×(n+1). 
+
+28.  In refernce to ANN Feed forward, If network has Sj units in layer j and Sj+1 units in layer j+1, then Θ for Jth layer will be of dimension 
+    Sj+1 × (Sj+1). Θ is always a 2D matrix.
+
+29. For AND Θ= [−30 20 20], NOR Θ= [10 -20 -20], OR Θ= [−10 20 20], we can follow same steps for multi-class classification.
+
+30. Back proagation is used to get Θ values.
