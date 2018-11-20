@@ -112,5 +112,12 @@
     Predict only if very confi, high precision, low recall.
     Do not want to miss manypos cases, high recall, low precision.
 
+36. Dot product is like measuring the similarity of two data points.
+
+37. In rbf kernel e^ mod xi-xj squared indicates similarity, however, the gamma decides the radius, 
+    if gamma is high, the neighbourhood is small and viceversa.
+
+38. Any inner product or dot product of the form x'x can be replaced with kernel equivalent.
+
 
 
