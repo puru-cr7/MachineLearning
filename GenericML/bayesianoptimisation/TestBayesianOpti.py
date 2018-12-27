@@ -9,8 +9,8 @@ from sklearn.datasets import make_classification
 from sklearn.model_selection import cross_val_score
 from sklearn.svm import SVC
 
-from bayesianoptimisation.bsopti import bayesian_optimisation 
-from bayesianoptimisation.plotters import plot_iteration 
+from bsopti import bayesian_optimisation 
+from plotters import plot_iteration 
 import numpy as np
 
 
@@ -62,5 +62,5 @@ print('Best score found is ', yp[indx])
 print('Best settings are found are ', xp[indx])
 
 rc('text', usetex=False)
-plot_iteration(lambdas, xp, yp, first_iter=0, second_param_grid=gammas, optimum=[0.58333333, -2.15789474], filepath='../results/bayesianoptimisation')
+# plot_iteration(lambdas, xp, yp, first_iter=0, second_param_grid=gammas, optimum=[0.58333333, -2.15789474], filepath='../results/bayesianoptimisation')
 

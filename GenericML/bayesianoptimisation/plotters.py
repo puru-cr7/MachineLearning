@@ -4,7 +4,7 @@ Created on Jul 3, 2018
 @author: Purnendu Rath (puru_cr7)
 '''
 
-from bayesianoptimisation.bsopti import expected_improvement 
+from bsopti import expected_improvement 
 import matplotlib.pyplot as plt
 import numpy as np
 import sklearn.gaussian_process as gp
